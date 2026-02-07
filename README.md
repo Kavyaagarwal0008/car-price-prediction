@@ -6,7 +6,7 @@ A complete **Machine Learning based Web Application** that predicts the price of
 
 ## 🔗 Live Demo
 
-👉 **Live Application:** [https://car-price-prediction-wsk.onrender.com](https://car-price-prediction-wsk.onrender.com)
+👉 **Live Application:** https://car-price-prediction-wwsk.onrender.com/
 
 ---
 
