@@ -1,45 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Car Price Prediction</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-<h2>Car Price Prediction System</h2>
 
-<form action="/predict" method="post">
+<body>
+    <div class="container">
+        <h2>Car Price Prediction System</h2>
 
-    <label>Select Model:</label>
-    <select name="model_choice">
+    <form action="/predict" method="post">
+
+        <label>Select Model:</label>
+        <select name="model_choice">
         <option value="model1">Model 1 (Linear / Ridge)</option>
         <option value="model2">Model 2 (Lasso / Advanced)</option>
     </select><br><br>
 
-    <input type="number" name="year" placeholder="Year" required><br><br>
-    <input type="number" name="mileage" placeholder="Mileage" required><br><br>
-    <input type="number" name="tax" placeholder="Tax" required><br><br>
-    <input type="number" step="any" name="mpg" placeholder="MPG" required><br><br>
-    <input type="number" step="any" name="engineSize" placeholder="Engine Size" required><br><br>
+        <input type="number" name="year" placeholder="Year" required><br><br>
+        <input type="number" name="mileage" placeholder="Mileage" required><br><br>
+        <input type="number" name="tax" placeholder="Tax" required><br><br>
+        <input type="number" step="any" name="mpg" placeholder="MPG" required><br><br>
+        <input type="number" step="any" name="engineSize" placeholder="Engine Size" required><br><br>
 
-    <input type="text" name="car_model" placeholder="Model (Fiesta, Focus...)" required><br><br>
+        <input type="text" name="car_model" placeholder="Model (Fiesta, Focus...)" required><br><br>
 
-    <select name="transmission">
+        <select name="transmission">
         <option>Manual</option>
         <option>Automatic</option>
         <option>Semi-Auto</option>
     </select><br><br>
 
-    <select name="fuelType">
+        <select name="fuelType">
         <option>Petrol</option>
         <option>Diesel</option>
         <option>Hybrid</option>
     </select><br><br>
 
-    <button type="submit">Predict</button>
+        <button type="submit">Predict</button>
 
-</form>
+    </form>
 
-<h3>{{ prediction_text }}</h3>
+    {% if prediction_text %}
+    <div class="result">
+        {{ prediction_text }}
+    </div>
+    {% endif %}
 
+
+    </div>
 </body>
+
 </html>
